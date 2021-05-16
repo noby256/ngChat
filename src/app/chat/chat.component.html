@@ -1,0 +1,78 @@
+<div class="message-wrap col-md-8">
+  <div class="msg-wrap">
+<!--    <ng-template ngFor let-message [ngForOf]="messages | async">-->
+    <div class="media msg" *ngFor="let message of messages">
+      <a class="pull-left" href="#">
+        <img class="media-object img-circle" style="width: 32px; height: 32px;" src="https://bootdey.com/img/Content/user_{{message?.author === 'Client' ? 1 : 2}}.jpg">
+      </a>
+      <div class="media-body">
+<!--        <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>-->
+        <h5 class="media-heading">{{ message?.author }}</h5>
+        <div [ngSwitch]="message.type">
+          <div *ngSwitchCase="'Date'">
+            <button class="btn btn-info" role="button">
+              Monday
+            </button>
+          </div>
+          <span *ngSwitchCase="'Text'">
+            {{ message.message }}
+          </span>
+        </div>
+      </div>
+    </div>
+<!--    </ng-template>-->
+<!--    <div class="alert alert-info msg-date">-->
+<!--      <strong>Today</strong>-->
+<!--    </div>-->
+<!--    <div class="media msg">-->
+<!--      <a class="pull-left" href="#">-->
+<!--        <img class="media-object   img-circle" style="width: 32px; height: 32px;" src="https://bootdey.com/img/Content/user_3.jpg">-->
+<!--      </a>-->
+<!--      <div class="media-body">-->
+<!--        <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>-->
+<!--        <h5 class="media-heading">Pauline mothg</h5>-->
+<!--        <small class="col-md-10 text-muted">Interdum et malesuada fames ac ante ipsum primis in faucibus. In at lacus ac velit vehicula elementum at a lorem. Nullam quis augue sodales, porttitor orci non"</small>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="media msg">-->
+<!--      <a class="pull-left" href="#">-->
+<!--        <img class="media-object  img-circle" data-src="holder.js/64x64" alt="64x64" style="width: 32px; height: 32px;" src="https://bootdey.com/img/Content/user_2.jpg">-->
+<!--      </a>-->
+<!--      <div class="media-body">-->
+<!--        <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>-->
+<!--        <h5 class="media-heading">Pauline mothg</h5>-->
+<!--        <small class="col-md-10 text-muted">consectetur dui. Quisque lacinia vitae lectus placerat dictum. Integer tristique sem a risus egestas, ac accumsan ligula volutpat. Donec at convallis elit"</small>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="media msg">-->
+<!--      <a class="pull-left" href="#">-->
+<!--        <img class="media-object img-circle" style="width: 32px; height: 32px;" src="https://bootdey.com/img/Content/user_2.jpg">-->
+<!--      </a>-->
+<!--      <div class="media-body">-->
+<!--        <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>-->
+<!--        <h5 class="media-heading">Pauline mothg</h5>-->
+<!--        <small class="col-md-10 text-muted">Cras commodo ante sit amet nulla porta, sed feugiat lectus accumsan. Maecenas luctus est sed dignissim mattis. Mauris ullamcorper hendrerit est in pharetra text-muted"</small>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <div class="send-wrap ">
+    <textarea class="form-control send-message" rows="3" placeholder="Write here..." [(ngModel)]="textarea"></textarea>
+  </div>
+  <div class="btn-panel">
+    <button class="btn btn-info" role="button" (click)="clickDate()">
+      <i class="fa fa-calendar"></i> Pick Day
+    </button>
+    <button class="btn btn-info" role="button" (click)="clickMap()">
+      <i class="fa fa-map-marker"></i> Show location
+    </button>
+    <button class="btn btn-info" role="button" (click)="clickRate()">
+      <i class="fa fa-star"></i> Rate
+    </button>
+    <button class="btn btn-success pull-right" role="button" (click)="sendMessage()">
+      Send Message
+    </button>
+  </div>
+</div>
