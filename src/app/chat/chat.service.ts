@@ -10,11 +10,12 @@ const TAG = '[ChatService]: ';
 })
 export class ChatService {
   messages$: ReplaySubject<Message> = new ReplaySubject();
+  private dayIncrementor: number = 0;
   constructor(private socket: Socket) {
     setTimeout(() => {
       console.log(TAG + 'setTimeout');
       this.sendMsg({
-        author: 'Book',
+        author: 'Ottonova bot',
         type: 'Text',
         message: 'Don’t Make Me Think a classic–with updated examples'
       });
@@ -29,9 +30,11 @@ export class ChatService {
   sendCommand(commandType: CommandType): void {
     console.log(TAG + 'sendCommand: ' + commandType);
     if (commandType === 'Date') {
+      const date = new Date();
+      date.setDate(date.getDate() + this.dayIncrementor++);
       this.messages$.next({
         type: commandType,
-        data: new Date()
+        data: date
       });
     } else if (commandType === 'Map') {
       this.messages$.next({

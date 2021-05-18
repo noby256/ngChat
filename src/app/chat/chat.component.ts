@@ -7,8 +7,7 @@ const TAG = '[ChatComponent]: ';
 
 @Component({
   selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  templateUrl: './chat.component.html'
 })
 export class ChatComponent implements OnInit, OnDestroy {
   title = 'ngChat';
@@ -32,6 +31,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.msgSubscribtion.unsubscribe();
 
   }
+
   sendMessage(): void {
     console.log(TAG + ' sendMessage(): ' + this.textarea);
     this.chat.sendMsg({ author: this.author, type: 'Text', message: this.textarea });
@@ -42,10 +42,12 @@ export class ChatComponent implements OnInit, OnDestroy {
     console.log(TAG + ' clickDate()');
     this.chat.sendCommand('Date');
   }
+
   clickMap(): void {
     console.log(TAG + ' clickMap()');
     this.chat.sendCommand('Map');
   }
+
   clickRate(): void {
     console.log(TAG + ' clickRate()');
     this.chat.sendCommand('Rate');

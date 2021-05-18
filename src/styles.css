@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+.conversation-wrap{
+  box-shadow: -2px 0 3px #ddd;
+  padding:0;
+  overflow: auto;
+}
+
+.conversation{
+  padding:5px;
+  border-bottom:1px solid #ddd;
+  margin:0;
+}
+
+.time{
+  color:#bfbfbf;
+}
+
+.content{
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-panel{
+  padding: 6px;
+}
+.btn{
+  margin: 4px;
+}
+
+.message-wrap{
+  box-shadow: 0 0 3px #ddd;
+  padding:0;
+}
+
+.msg{
+  padding:5px;
+  margin:0;
+}
+
+.msg-wrap{
+  padding: 10px;
+  overflow: auto;
+}
+.send-wrap{
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+
+.send-message{
+  resize: none;
+}
+
+.highlight{
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+
+.send-message-btn{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.msg-wrap .media-heading{
+  color:#003bb3;
+  font-weight: 700;
+}
+
+.msg-date{
+  background: none;
+  text-align: center;
+  color:#aaa;
+  border:none;
+  box-shadow: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.checked {
+  color: orange;
+}
+
+

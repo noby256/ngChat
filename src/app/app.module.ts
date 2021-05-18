@@ -4,12 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { SocketIoModule } from 'ngx-socket-io';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
+import { MapImageComponent } from './chat/map-image.component';
+import { DayButtonsComponent } from './chat/day-buttons.component';
+import { RatingComponent } from './chat/rating.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ChatComponent
-  ],
+    declarations: [
+      AppComponent,
+      ChatComponent,
+      DayButtonsComponent,
+      MapImageComponent,
+      RatingComponent
+    ],
   imports: [
     BrowserModule,
     FormsModule,

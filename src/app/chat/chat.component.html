@@ -1,4 +1,4 @@
-<div class="message-wrap col-md-8">
+<div class="message-wrap col-md-24">
   <div class="msg-wrap">
 <!--    <ng-template ngFor let-message [ngForOf]="messages | async">-->
     <div class="media msg" *ngFor="let message of messages">
@@ -9,14 +9,12 @@
 <!--        <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>-->
         <h5 class="media-heading">{{ message?.author }}</h5>
         <div [ngSwitch]="message.type">
-          <div *ngSwitchCase="'Date'">
-            <button class="btn btn-info" role="button">
-              Monday
-            </button>
-          </div>
-          <span *ngSwitchCase="'Text'">
+          <small class="col-md-10 text-muted" *ngSwitchCase="'Text'">
             {{ message.message }}
-          </span>
+          </small>
+          <app-day-buttons *ngSwitchCase="'Date'" [startDate]="message.data"></app-day-buttons>
+          <app-map-image *ngSwitchCase="'Map'" [lat]="message.data.lat" [lng]="message.data.lng"></app-map-image>
+          <app-rating *ngSwitchCase="'Rate'" [i]="1" [j]="2"></app-rating>
         </div>
       </div>
     </div>
